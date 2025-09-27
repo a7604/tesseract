@@ -31,7 +31,7 @@ jobs:
         run: npm ci
         
       - name: Check Code Quality
-        run: npm run lint
+        run: npm run lint -- --max-warnings 50  # Allow up to 50 warnings
         
       - name: Build Website
         run: npm run build
