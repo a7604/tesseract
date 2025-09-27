@@ -7,7 +7,9 @@
         "dev": "vite",
         "build": "vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "docker:build": "docker build -t tesseract-website .",
+        "docker:run": "docker run -p 3000:80 tesseract-website"
     },
     "dependencies": {
         "@emotion/react": "^11.14.0",
