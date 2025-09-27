@@ -46,10 +46,9 @@ jobs:
       #   run: npm run lint -- --max-warnings 200
         
       - name: Build Website
-        run: npm run build
-        
-      - name: List built files (debug)
         run: |
+          rm -rf dist
+          npm run build
           echo "Built files:"
           ls -la dist/
           echo "Assets:"
@@ -79,7 +78,13 @@ jobs:
         run: npm ci
         
       - name: Build Website
-        run: npm run build
+        run: |
+          rm -rf dist
+          npm run build
+          echo "Built files:"
+          ls -la dist/
+          echo "Assets:"
+          ls -la dist/assets/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
