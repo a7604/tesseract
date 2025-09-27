@@ -4,16 +4,15 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: '/tesseract/', // Add this line - replace 'tesseract' with your repo name
   server: {
     host: '0.0.0.0',
     port: 5173,
     strictPort: true,
-    // More specific allowed hosts for development
-    // This allows your local network but not arbitrary external access
     allowedHosts: [
       'localhost',
       '127.0.0.1',
-      '.local' // Allows *.local domains
+      '.local'
     ]
   },
   build: {
