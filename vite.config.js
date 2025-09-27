@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/tesseract/', // Add this line - replace 'tesseract' with your repo name
+  base: '/tesseract/', // This is crucial for GitHub Pages
   server: {
     host: '0.0.0.0',
     port: 5173,
@@ -16,6 +16,8 @@ export default defineConfig({
     ]
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {

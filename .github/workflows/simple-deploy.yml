@@ -37,6 +37,9 @@ jobs:
       - name: Build Website
         run: npm run build
         
+      - name: List built files (debug)
+        run: ls -la dist/
+        
   # Job 2: Deploy to GitHub Pages (SUPER SIMPLE!)
   deploy:
     name: Deploy to GitHub Pages
@@ -59,6 +62,9 @@ jobs:
         
       - name: Build Website
         run: npm run build
+        
+      - name: List built files (debug)
+        run: ls -la dist/
         
       # This is the magic - GitHub Pages deployment!
       - name: Deploy to GitHub Pages
